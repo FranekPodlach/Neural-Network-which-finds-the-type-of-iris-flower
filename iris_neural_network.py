@@ -29,7 +29,7 @@ class Model(nn.Module):
 
 
 ### IMPORTING CSV FILE ###
-df = pd.read_csv("C:\\Users\\podla\\Documents\\PYTORCH_NOTEBOOKS\\Data\\iris.csv")
+df = pd.read_csv("path to iris.csv file")
 
 ### EDITING CSV FILE ###
 x = df.drop("target", axis=1)
@@ -102,11 +102,11 @@ with torch.no_grad():
     print(correct)
 
 ### SAVING MODEL TO A FILE ###
-torch.save(model.state_dict(), 'C:\\Users\\podla\\Desktop\\iris_model.pt')
+torch.save(model.state_dict(), 'path where you want to save model.pt file')
 
 ### CREATING A NEW MODEL FROM A FILE ###
 new_model = Model()
-new_model.load_state_dict(torch.load('C:\\Users\\podla\\Desktop\\iris_model.pt'))
+new_model.load_state_dict(torch.load('path to model.pt file'))
 
 ### PREDICTING A NEW FLOWER WITH A NEW MODEL
 mystery_iris = torch.tensor([5.6,3.7,2.2,0.5])
